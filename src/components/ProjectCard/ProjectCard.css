@@ -1,0 +1,52 @@
+.project-card {
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px gray;
+    position:relative;
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.content {
+  opacity: 0;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(7, 3, 56);
+  background-color: rgba(200, 200, 200, 0.5);
+  width: 100%;
+  height: 300px;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  -ms-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+
+}
+
+.project-card .content:hover {
+  opacity: 1;
+}
+
+.text {
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card .content .text {
+  height: 0;
+  opacity: 1;  
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card .content:hover .text {
+  opacity: 1;
+  /* transform: translateY(250px);
+  -webkit-transform: translateY(250px); */
+}

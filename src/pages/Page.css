@@ -1,0 +1,20 @@
+.project-info {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 10px;
+    row-gap: 10px;
+    border: 1.5cm;
+}
+
+.project-info img {
+    grid-column: 1;
+    border: 2px solid black;
+    box-shadow: 0px 0px 5px gray;
+    height: 28%;
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+div {
+    background-image: './components/images/pexels-jess-bailey-designs-743986.jpg';
+    size: cover;
+}

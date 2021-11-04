@@ -43,6 +43,15 @@ function LoginForm() {
     return (
         <form>
         <div>
+        <label htmlFor="email">Email: </label>
+        <input
+            type="text"
+            id="email"
+            placeholder="Enter email"
+            onChange={handleChange}
+        />
+        </div>
+        <div>
         <label htmlFor="username">Username: </label>
         <input
             type="text"

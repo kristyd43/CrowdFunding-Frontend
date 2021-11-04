@@ -1,13 +1,11 @@
 import React from "react";
 import "./Title.css";
-import "./school_kids.jpg"
+
 
 function Title() {
-    var header = require('./school_kids.jpg')
     return (
-        <div id="container">
-        <img src={header} width="300" height="300" alt=""/>
-        <h1>
+        <div >
+        <h1 id="preaching-teaching">
         Preaching Teaching
         </h1>
         </div>

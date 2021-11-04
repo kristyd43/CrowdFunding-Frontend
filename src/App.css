@@ -1,9 +1,19 @@
 #project-list {
   display: grid;
   grid-template-columns: 30% 30% 30%;
-  column-gap: 10px;
+  column-gap: 30px;
   row-gap: 10px;
   justify-content: center;
+  margin-top: 1cm;
+}
+
+#container {
+  background-repeat: no-repeat;
+  height: 500px;
+  object-fit: cover;
+  background-image: url('https://www.beinspirational.co.uk/wp-content/uploads/2020/11/1_LrZGBfS1rlJA-0mV0biD8w.jpeg');
+  background-position: left center;
+  border-radius: 2mm;
 }
 
 nav h1 #top-page {

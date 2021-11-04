@@ -7,28 +7,40 @@ import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import Title from "./components/Title/Title";
 import "./components/Title/school_kids.jpg";
+import Quote from "./components/Quote/Quote"
+import NavBarUser from "./components/NavBarUser/NavBarUser";
+import AboutUs from "./components/AboutUs/AboutUs";
+import CreateProjectPage from "./pages/CreateProjectPage";
 
 
 function App() {
-  var school_kids = require("./components/Title/school_kids.jpg")
 
   return (
     <Router>
-      <img src={school_kids} alt="" />
+      <img/>
       <div>
-        <div id="top-page">
+        <div id="container" >
       <Nav />
         <Title />
+        <Quote />
         </div>
         <Switch>
+          <Route exact path="/createprojectpage">
+          <CreateProjectPage/>
+        </Route>
           <Route path="/projects/:id">
             <ProjectPage />
           </Route>
           <Route path="/login">
             <LoginPage />
+          {/* </Route>
+          <Route path="/profile">
+            <ProfilePage /> */}
           </Route>
           <Route path="/">
-            <HomePage />
+            <AboutUs />
+            <HomePage />      
+            
           </Route>
         </Switch>
       </div>

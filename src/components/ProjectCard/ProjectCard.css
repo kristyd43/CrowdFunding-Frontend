@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=PT+Mono&display=swap');
+
 .project-card {
     width: 100%;
     border: 1px solid black;
@@ -36,6 +39,10 @@
 .text {
   align-items: center;
   justify-content: center;
+  color: black;
+  font-family: 'Allison', cursive;
+  font-size: 1.5cm;
+  font-weight: bold;
 }
 
 .project-card .content .text {
@@ -49,4 +56,10 @@
   opacity: 1;
   /* transform: translateY(250px);
   -webkit-transform: translateY(250px); */
+}
+
+#project-card-title {
+  color: white;
+  background-color: darkslategrey;
+  font-family: 'PT Mono', monospace;
 }

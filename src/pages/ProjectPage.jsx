@@ -6,6 +6,15 @@ function ProjectPage() {
     const [projectData, setProjectData] = useState({pledges: [] });
     const { id } = useParams();
 
+    const DeleteProject = async () => {
+        fetch(`${process.env.REACT_APP_API_URL}projects/${id}`, {
+          method: "delete",
+          headers: {
+            "Authorization": `Token ${localStorage.getItem('token')}`
+          }
+        })
+      }
+
     useEffect(() => {fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
     .then((results) => {
     console.log("results", results)
@@ -36,6 +45,12 @@ function ProjectPage() {
         );
     })}
     </ul>
+    {/* <button type="submit" onClick={PledgeForm}>
+            Pledge Now!
+    </button> */}
+    <button type="submit" onClick={DeleteProject}>
+            Delete Project
+    </button>
     </div>
     );
 }

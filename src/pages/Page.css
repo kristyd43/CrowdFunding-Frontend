@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=PT+Mono&display=swap');
+
 .project-info {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 10px;
     row-gap: 10px;
     border: 1.5cm;
+    margin-top: 5mm;
 }
 
 .project-info img {
@@ -14,7 +20,28 @@
     margin: 0rem 1rem 0rem 1rem;
 }
 
-div {
-    background-image: './components/images/pexels-jess-bailey-designs-743986.jpg';
-    size: cover;
+.aboutUs-container {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    margin-top: 1cm;
+    margin-bottom: 2cm;
 }
+
+h1.aboutUs {
+    grid-column: 2;
+    font-family: 'Milonga', cursive;
+}
+
+h2.aboutUs {
+    grid-column: 2;
+    font-family: 'PT Mono', monospace;
+    font-size: .5cm;
+    padding: 1cm;
+    border-bottom: solid black 1px;
+}
+
+#quote{
+    font-family: 'Allison', cursive;
+    font-size: 2.5cm;
+}
+

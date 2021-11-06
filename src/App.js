@@ -13,6 +13,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import PledgePage from "./pages/PledgePage";
 import UpdateProjectPage from "./pages/UpdateProjectPage";
+import CreateUserPage from "./pages/CreateUserPage";
 
 const NoMatchPage = () => {
   return (
@@ -26,7 +27,7 @@ function App() {
     <Router>
       
         <div id="container" >
-      <Nav />
+        <Nav />
         <Title />
         <Quote />
         </div>
@@ -34,26 +35,29 @@ function App() {
           <Route exact path="/create/project">
           <CreateProjectPage/>
         </Route>
-        <Route exact path="/update/project">
+        <Route exact path="/update/project/:id">
         <UpdateProjectPage />
         </Route>
           <Route exact path="/projects/:id">
             <ProjectPage />
           </Route>
-          <Route exact path="/pledges">
+          <Route exact path="/pledges/:id">
           <PledgePage/>
         </Route>
           <Route exact path="/login">
             <LoginPage />
-          {/* </Route>
-          <Route path="/profile">
-            <ProfilePage /> */}
           </Route>
-          <Route path="/">
+          <Route exact path="/create/user">
+            <CreateUserPage />
+          </Route>
+          {/* <Route path="/profile">
+            <ProfilePage />
+          </Route> */}
+          <Route exact path="/">
             <AboutUs />
             <HomePage />      
           </Route>
-        <Route component={NoMatchPage} /> 
+        <Route exact path="/error"> <NoMatchPage /> </Route>
         </Switch>
     </Router>
   );

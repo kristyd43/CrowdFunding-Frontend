@@ -1,6 +1,18 @@
 nav {
-    display: flex;
-    justify-content: space-around;
-    color: black;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  opacity: 0.6;
+  border: solid white;
+}
+
+.nav {
+  color: white;
+
+  border-radius: 1px;
+
+  padding: 3px;
+  display: flex;
+  align-items: center;
 }

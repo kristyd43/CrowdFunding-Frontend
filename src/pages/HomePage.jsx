@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import "./Page.css";
+import { useHistory } from "react-router-dom";
 
 function HomePage() {
+  const history = useHistory();
   const [projectList, setProjectList] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}projects`)
       .then((results) => {
-        console.log("results", results);
+        if (results.status == 404 || results.status == 403) {
+          history.push("/error");
+          console.log("results", results);
+        }
         return results.json();
       })
       .then((data) => {

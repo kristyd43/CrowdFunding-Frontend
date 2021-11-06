@@ -3,10 +3,10 @@ import { useHistory } from "react-router-dom";
 
 function PledgeForm() {
   const [pledgeInfo, setPledgeInfo] = useState({
-    amount: Number,
+    amount: 0,
     comment: "",
-    anonymous: "false",
-    project_id: Number,
+    anonymous: false,
+    project_id: 0,
   });
 
   const history = useHistory();
@@ -31,7 +31,13 @@ function PledgeForm() {
       },
       body: JSON.stringify(pledgeInfo),
     });
-
+    if (
+      response.status == 404 ||
+      response.status == 403 ||
+      response.status == 400
+    ) {
+      history.push("/error");
+    }
     return response.json();
   };
 
@@ -40,7 +46,7 @@ function PledgeForm() {
     const { id, value } = e.target;
     setPledgeInfo((prevPledge) => ({
       ...prevPledge,
-      [id]: true,
+      [id]: !prevPledge[id],
     }));
   };
 
@@ -48,6 +54,13 @@ function PledgeForm() {
     e.preventDefault();
     if (window.localStorage.getItem("token")) {
       postPledge().then((response) => {
+        if (
+          response.status == 404 ||
+          response.status == 403 ||
+          response.statuscode == 400
+        ) {
+          history.push("/error");
+        }
         history.push("/");
       });
     }
@@ -62,6 +75,7 @@ function PledgeForm() {
           id="amount"
           placeholder="Enter Pledge Amount"
           onChange={enterPledge}
+          value={pledgeInfo.amount}
         />
       </div>
       <div>
@@ -71,6 +85,7 @@ function PledgeForm() {
           id="comment"
           placeholder="Comment on this campaign"
           onChange={enterPledge}
+          value={pledgeInfo.comment}
         />
       </div>
       <div>
@@ -80,6 +95,7 @@ function PledgeForm() {
           id="anonymous"
           placeholder="Pledge anonymously?"
           onClick={Checkbox}
+          value={pledgeInfo.anonymous}
         />
       </div>
       <div>
@@ -89,6 +105,7 @@ function PledgeForm() {
           id="project_id"
           placeholder="Choose your campaign"
           onChange={enterPledge}
+          value={pledgeInfo.project_id}
         />
       </div>
       <button type="submit" onClick={handleSubmit}>

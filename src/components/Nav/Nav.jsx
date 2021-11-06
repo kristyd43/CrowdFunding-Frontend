@@ -6,13 +6,21 @@ import ProfilePage from "../../pages/ProfilePage";
 function Nav() {
   return (
     <nav>
-      <Link to="/login/">Login</Link>
-      <Link to="/">Home</Link>
-      <Link id="profile" to="/profile">
+      <Link class="nav" to="/login/">
+        Login/Register
+      </Link>
+      <Link class="nav" to="/">
+        Home
+      </Link>
+      <Link class="nav" id="profile" to="/profile">
         Profile
       </Link>
-      <Link to="/">Search</Link>
-      <Link to="/create/project">Create Campaign</Link>
+      <Link class="nav" to="/">
+        Search
+      </Link>
+      <Link class="nav" to="/create/project">
+        Create Campaign
+      </Link>
     </nav>
   );
 }

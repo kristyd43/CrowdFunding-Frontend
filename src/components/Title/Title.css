@@ -10,9 +10,10 @@
   font-family: "Milonga", cursive;
   justify-content: center;
   display: inline-block;
-  border: solid white;
+  border: solid black;
   border-width: 2mm;
   padding: 1rem;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
+  opacity: 0.6;
 }

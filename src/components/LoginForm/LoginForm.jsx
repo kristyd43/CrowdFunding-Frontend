@@ -1,79 +1,92 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function LoginForm() {
-    const [credentials, setCredentials] = useState({
-        username: "",
-        password: "",
-    });
-    const history = useHistory();
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
+  const history = useHistory();
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setCredentials((prevCredentials) => ({
-            ...prevCredentials,
-            [id]: value,
-        }));
-    };
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setCredentials((prevCredentials) => ({
+      ...prevCredentials,
+      [id]: value,
+    }));
+  };
 
-    const postData = async () => {
-        const response = await fetch(
-        `${process.env.REACT_APP_API_URL}api-token-auth/`, 
-        {
+  const postData = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}api-token-auth/`,
+      {
         method: "post",
         headers: {
-            "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
-        }
-        );
-        return response.json();
-    };
+      }
+    );
+    if (
+      response.status == 404 ||
+      response.status == 403 ||
+      response.status == 400
+    ) {
+      history.push("/error");
+    }
+    return response.json();
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (credentials.username && credentials.password) {
-        postData().then((response) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (credentials.username && credentials.password) {
+      postData().then((response) => {
         window.localStorage.setItem("token", response.token);
-        history.push("/");    
-        });
-        }
-    };
+        history.push("/");
+      });
+    }
+  };
 
-    return (
-        <form>
+  return (
+    <div>
+      <form>
         <div>
-        <label htmlFor="email">Email: </label>
-        <input
+          <label htmlFor="email">Email: </label>
+          <input
             type="text"
             id="email"
             placeholder="Enter email"
             onChange={handleChange}
-        />
+          />
         </div>
         <div>
-        <label htmlFor="username">Username: </label>
-        <input
+          <label htmlFor="username">Username: </label>
+          <input
             type="text"
             id="username"
             placeholder="Enter username"
             onChange={handleChange}
-        />
+          />
         </div>
         <div>
-        <label htmlFor="password">Password: </label>
-        <input 
+          <label htmlFor="password">Password: </label>
+          <input
             type="password"
             id="password"
             placeholder="Password"
             onChange={handleChange}
-        />
+          />
         </div>
         <button type="submit" onClick={handleSubmit}>
-        Login
+          Login
         </button>
-        </form>
-    );
+      </form>
+      <h3>Don't have a login? Register now!</h3>
+      <button>
+        <Link to="/create/user">Register</Link>
+      </button>
+    </div>
+  );
 }
 
 export default LoginForm;

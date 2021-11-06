@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
 
-#preaching-teaching {
-    font-family: 'Milonga', cursive;
-    justify-content: center;
+@media (min-width: 701px) {
+  #preaching-teaching {
     font-size: 1.5cm;
-    display: inline-block;
-    border: solid white;
-    border-width: 2mm;
-    padding: 1rem;  
-    color: white;
-
+  }
 }
 
+#preaching-teaching {
+  font-family: "Milonga", cursive;
+  justify-content: center;
+  display: inline-block;
+  border: solid white;
+  border-width: 2mm;
+  padding: 1rem;
+  color: white;
+  background-color: black;
+}

@@ -4,25 +4,24 @@ import "./ProjectCard.css";
 import PledgeForm from "../PledgeForm/PledgeForm";
 
 function ProjectCard(props) {
-    const { projectData } = props;
+  const { projectData } = props;
 
-
-    return (
-        <div class="project-card">
-        <Link to={`/projects/${projectData.id}`}>
-        <img src={projectData.image} width="300" height="300" alt="description"/>
+  return (
+    <div class="project-card">
+      <Link to={`/projects/${projectData.id}`}>
+        <img src={projectData.image} id="project-image" alt="description" />
         <div class="content">
-            <div class="text">{projectData.description}</div>
+          <div class="text">{projectData.description}</div>
         </div>
         <h3 id="project-card-title">{projectData.title}</h3>
-        </Link>
+      </Link>
+      <Link to="/pledges">
         <button type="submit" onClick={PledgeForm}>
-            Pledge Now!
+          Pledge Now!
         </button>
-        </div>
-        
-    );
+      </Link>
+    </div>
+  );
 }
-
 
 export default ProjectCard;

@@ -1,47 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allison&family=PT+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allison&family=PT+Mono&display=swap");
 
-.project-info {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 10px;
-    row-gap: 10px;
-    border: 1.5cm;
-    margin-top: 5mm;
+.project-info-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  column-gap: 10px;
+  row-gap: 10px;
+  border: 1.5cm;
+  margin-top: 5mm;
+  grid-template-rows: 100% 30% 30%;
 }
 
-.project-info img {
-    grid-column: 1;
-    border: 2px solid black;
-    box-shadow: 0px 0px 5px gray;
-    height: 28%;
-    margin: 0rem 1rem 0rem 1rem;
+#project-image {
+  width: "300";
+  height: "300";
+}
+
+.project-info {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.project-info-container img {
+  grid-column: 1;
+  border: 2px solid black;
+  box-shadow: 0px 0px 5px gray;
+  margin: 0rem 1rem 0rem 1rem;
+  grid-row: 1;
+  width: 75%;
 }
 
 .aboutUs-container {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    margin-top: 1cm;
-    margin-bottom: 2cm;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  margin-top: 1cm;
+  margin-bottom: 2cm;
 }
 
 h1.aboutUs {
-    grid-column: 2;
-    font-family: 'Milonga', cursive;
+  grid-column: 2;
+  font-family: "Milonga", cursive;
 }
 
 h2.aboutUs {
-    grid-column: 2;
-    font-family: 'PT Mono', monospace;
-    font-size: .5cm;
-    padding: 1cm;
-    border-bottom: solid black 1px;
+  grid-column: 2;
+  font-family: "PT Mono", monospace;
+  font-size: 0.5cm;
+  padding: 1cm;
+  border-bottom: solid black 1px;
 }
 
-#quote{
-    font-family: 'Allison', cursive;
-    font-size: 2.5cm;
+#quote {
+  font-family: "Allison", cursive;
+  font-size: 2.5cm;
 }
 
+.update_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pledges {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+@media (max-width: 700px) {
+  #quote {
+    font-size: 1.2cm;
+    margin-top: 0cm;
+  }
+
+  #container {
+    height: 250px;
+    background-position: bottom center;
+  }
+
+  #preaching-teaching {
+    font-size: 0.8cm;
+  }
+
+  h2.aboutUs {
+    font-size: 0.4cm;
+  }
+
+  #project-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  #project-image {
+    height: 100px;
+  }
+}

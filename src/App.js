@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import HomePage from "./pages/HomePage";
@@ -11,27 +11,39 @@ import Quote from "./components/Quote/Quote"
 import NavBarUser from "./components/NavBarUser/NavBarUser";
 import AboutUs from "./components/AboutUs/AboutUs";
 import CreateProjectPage from "./pages/CreateProjectPage";
+import PledgePage from "./pages/PledgePage";
+import UpdateProjectPage from "./pages/UpdateProjectPage";
 
+const NoMatchPage = () => {
+  return (
+    <h3>404 - Not found</h3>
+  );
+};
 
 function App() {
 
   return (
     <Router>
-      <img/>
-      <div>
+      
         <div id="container" >
       <Nav />
         <Title />
         <Quote />
         </div>
         <Switch>
-          <Route exact path="/createprojectpage">
+          <Route exact path="/create/project">
           <CreateProjectPage/>
         </Route>
-          <Route path="/projects/:id">
+        <Route exact path="/update/project">
+        <UpdateProjectPage />
+        </Route>
+          <Route exact path="/projects/:id">
             <ProjectPage />
           </Route>
-          <Route path="/login">
+          <Route exact path="/pledges">
+          <PledgePage/>
+        </Route>
+          <Route exact path="/login">
             <LoginPage />
           {/* </Route>
           <Route path="/profile">
@@ -40,10 +52,9 @@ function App() {
           <Route path="/">
             <AboutUs />
             <HomePage />      
-            
           </Route>
+        <Route component={NoMatchPage} /> 
         </Switch>
-      </div>
     </Router>
   );
 }

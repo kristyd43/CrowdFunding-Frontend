@@ -111,6 +111,12 @@ button {
   grid-column: 2;
 }
 
+@media (max-width: 400px) {
+  #quote {
+    font-size: 1.2cm;
+  }
+}
+
 @media (max-width: 700px) {
   #quote {
     font-size: 1.2cm;

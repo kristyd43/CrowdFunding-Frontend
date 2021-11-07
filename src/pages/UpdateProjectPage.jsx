@@ -33,6 +33,7 @@ function UpdateProjectPage() {
           "Content-Type": "application/json",
           Authorization: `Token ${token}`,
         },
+
         body: JSON.stringify(projectInfo),
       }
     );
@@ -45,6 +46,7 @@ function UpdateProjectPage() {
         console.log("results", results);
         return results.json();
       })
+
       .then((data) => {
         setProjectInfo(data);
       });
@@ -54,8 +56,13 @@ function UpdateProjectPage() {
     e.preventDefault();
     if (window.localStorage.getItem("token")) {
       updateData().then((response) => {
-        console.log("response from our API ....");
-        history.push("/");
+        if (response.status === 401 || response.status === 404) {
+          history.push("/error");
+          console.log("response", response);
+        } else {
+          console.log("response from our API ....");
+          history.push("/");
+        }
       });
     }
   };
@@ -71,19 +78,19 @@ function UpdateProjectPage() {
 
   return (
     <div>
-      <form>
-        <div>
+      <h1 class="form-title">Edit Your Project</h1>
+      <form class="form">
+        <div class="form-field">
           <label htmlFor="projectImage">Profile Photo: </label>
           <input
+            value={projectInfo.image}
             type="text"
             id="image"
             placeholder="New Profile Photo"
             onChange={handleChange}
           />
         </div>
-      </form>
-      <form>
-        <div>
+        <div class="form-field">
           <label htmlFor="projectTitle">Project Name: </label>
           <input
             value={projectInfo.title}
@@ -93,7 +100,7 @@ function UpdateProjectPage() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div class="form-field">
           <label htmlFor="projectDescription">Project Description: </label>
           <input
             value={projectInfo.description}
@@ -104,7 +111,7 @@ function UpdateProjectPage() {
           />
         </div>
 
-        <div>
+        <div class="form-field">
           <label htmlFor="projectGoal">Target Amount: </label>
           <input
             value={projectInfo.goal}
@@ -115,7 +122,7 @@ function UpdateProjectPage() {
           />
         </div>
 
-        <div>
+        <div class="form-field">
           <label htmlFor="projectIsOpen">Project Is Open?</label>
           <input
             type="checkbox"

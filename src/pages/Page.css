@@ -10,7 +10,12 @@
   row-gap: 10px;
   border: 1.5cm;
   margin-top: 5mm;
-  grid-template-rows: 100% 30% 30%;
+
+  font-family: "PT Mono", monospace;
+}
+
+.project-info-container button {
+  grid-column: 2;
 }
 
 #project-image {
@@ -63,15 +68,47 @@ h2.aboutUs {
   display: inline-block;
 }
 
-.update_delete {
+#project-page-buttons {
   display: flex;
-  align-items: center;
   justify-content: center;
+  grid-column: 2;
 }
 
 .pledges {
   grid-column: 3;
   grid-row: 1;
+}
+
+.form-field {
+  border-bottom: double black;
+  grid-column: 2;
+  padding: 15px;
+  font-family: "PT Mono", monospace;
+  display: flex;
+  align-items: flex-start;
+}
+
+button {
+  padding: 8px;
+  background-color: black;
+  color: white;
+  margin: 15px;
+  font-family: "PT Mono", monospace;
+}
+
+.form-title {
+  font-family: "PT Mono", monospace;
+  margin-top: 5%;
+}
+
+.form {
+  font-family: "PT Mono", monospace;
+  padding: 15px;
+  border: solid black;
+  border-width: 5mm;
+  display: inline-block;
+  grid-template-columns: 30% 30% 30%;
+  grid-column: 2;
 }
 
 @media (max-width: 700px) {

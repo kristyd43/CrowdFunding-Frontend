@@ -35,7 +35,6 @@ function ProjectPage() {
         <h4>Total Raised: {projectData.total_raised}</h4>
         <h4>Target: ${projectData.goal}</h4>
         <h4>{projectData.description}</h4>
-        <h5>Created on {projectData.date_created}</h5>
       </div>
       <div class="pledges">
         <h3>Pledges:</h3>
@@ -49,14 +48,23 @@ function ProjectPage() {
           })}
         </ul>
       </div>
-      <div class="update_delete">
+      <div id="project-page-buttons">
         {/* <button type="submit" onClick={PledgeForm}>
             Pledge Now!
     </button> */}
         <button type="submit" onClick={DeleteProject}>
           Delete Project
         </button>
-        <Link to={`/update/project/${id}`}>Update Project</Link>
+        <button>
+          <Link style={{ color: "white" }} to={`/update/project/${id}`}>
+            Update Project
+          </Link>{" "}
+        </button>
+        <button>
+          <Link style={{ color: "white" }} to={`/pledges`}>
+            Pledge to Project
+          </Link>{" "}
+        </button>
       </div>
     </div>
   );

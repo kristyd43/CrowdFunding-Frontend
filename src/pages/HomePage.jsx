@@ -9,7 +9,7 @@ function HomePage() {
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}projects`)
       .then((results) => {
-        if (results.status == 404 || results.status == 403) {
+        if (results.status == 404 || results.status == 401) {
           history.push("/error");
           console.log("results", results);
         }

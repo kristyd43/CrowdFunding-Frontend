@@ -49,8 +49,9 @@ function LoginForm() {
 
   return (
     <div>
-      <form>
-        <div>
+      <h1 class="form-title">Login</h1>
+      <form class="form">
+        <div class="form-field">
           <label htmlFor="email">Email: </label>
           <input
             type="text"
@@ -59,7 +60,7 @@ function LoginForm() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div class="form-field">
           <label htmlFor="username">Username: </label>
           <input
             type="text"
@@ -68,7 +69,7 @@ function LoginForm() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div class="form-field">
           <label htmlFor="password">Password: </label>
           <input
             type="password"

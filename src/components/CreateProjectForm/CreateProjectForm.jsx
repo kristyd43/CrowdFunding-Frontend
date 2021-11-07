@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import ProjectCard from "../ProjectCard/ProjectCard";
 
 function CreateProjectForm() {
   const [projectInfo, setProjectInfo] = useState({
@@ -56,60 +55,63 @@ function CreateProjectForm() {
   };
 
   return (
-    <form>
-      <div>
-        <label htmlFor="projectTitle">Project Name: </label>
-        <input
-          type="text"
-          id="title"
-          placeholder="Enter Project Name"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="projectDescription">Project Description: </label>
-        <input
-          type="text"
-          id="description"
-          placeholder="Description"
-          onChange={handleChange}
-        />
-      </div>
+    <div>
+      <h1 class="form-title">Create Your Project:</h1>
+      <form class="form">
+        <div class="form-field">
+          <label htmlFor="projectTitle">Project Name: </label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Enter Project Name"
+            onChange={handleChange}
+          />
+        </div>
+        <div class="form-field">
+          <label htmlFor="projectDescription">Project Description: </label>
+          <input
+            type="text"
+            id="description"
+            placeholder="Description"
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="projectGoal">Target Amount: </label>
-        <input
-          type="text"
-          id="goal"
-          placeholder="Target Amount"
-          onChange={handleChange}
-        />
-      </div>
+        <div class="form-field">
+          <label htmlFor="projectGoal">Target Amount: </label>
+          <input
+            type="text"
+            id="goal"
+            placeholder="Target Amount"
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="projectImage">Profile Photo: </label>
-        <input
-          type="text"
-          id="image"
-          placeholder="Profile Photo"
-          onChange={handleChange}
-        />
-      </div>
+        <div class="form-field">
+          <label htmlFor="projectImage">Profile Photo: </label>
+          <input
+            type="text"
+            id="image"
+            placeholder="Profile Photo"
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="projectIsOpen">Project Is Open?</label>
-        <input
-          type="checkbox"
-          id="is_open"
-          placeholder="IsOpen"
-          onClick={Checkbox}
-        />
-      </div>
+        <div class="form-field">
+          <label htmlFor="projectIsOpen">Project Is Open?</label>
+          <input
+            type="checkbox"
+            id="is_open"
+            placeholder="IsOpen"
+            onClick={Checkbox}
+          />
+        </div>
 
-      <button type="submit" onClick={handleSubmit}>
-        Submit New Project
-      </button>
-    </form>
+        <button type="submit" onClick={handleSubmit}>
+          Submit New Project
+        </button>
+      </form>
+    </div>
   );
 }
 

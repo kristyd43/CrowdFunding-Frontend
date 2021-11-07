@@ -12,9 +12,6 @@ function Nav() {
       <Link class="nav" to="/">
         Home
       </Link>
-      <Link class="nav" id="profile" to="/profile">
-        Profile
-      </Link>
       <Link class="nav" to="/">
         Search
       </Link>

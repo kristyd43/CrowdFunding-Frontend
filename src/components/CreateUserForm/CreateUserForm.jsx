@@ -47,37 +47,48 @@ function CreateUserForm() {
   };
 
   return (
-    <form>
-      <label htmlFor="createUsername">Create Username: </label>
-      <input
-        type="text"
-        id="username"
-        placeholde="Enter Username"
-        onChange={enterUser}
-        value={userInfo.username}
-      />
+    <div>
+      <h1 class="form-title">Register: </h1>
+      <form class="form">
+        <div class="form-field">
+          <label htmlFor="createUsername">Create Username: </label>
+          <input
+            type="text"
+            id="username"
+            placeholde="Enter Username"
+            onChange={enterUser}
+            value={userInfo.username}
+          />
+        </div>
 
-      <label htmlFor="createEmail">Enter Email Address: </label>
-      <input
-        type="text"
-        id="email"
-        placeholde="Enter Email"
-        onChange={enterUser}
-        value={userInfo.email}
-      />
+        <div class="form-field">
+          <label htmlFor="createEmail">Enter Email Address: </label>
+          <input
+            type="text"
+            id="email"
+            placeholde="Enter Email"
+            onChange={enterUser}
+            value={userInfo.email}
+          />
+        </div>
 
-      <label htmlFor="createPassword">Create Password: </label>
-      <input
-        type="text"
-        id="password"
-        placeholde="Enter Password"
-        onChange={enterUser}
-        value={userInfo.password}
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Create User!
-      </button>
-    </form>
+        <div class="form-field">
+          <label htmlFor="createPassword">Create Password: </label>
+          <input
+            type="text"
+            id="password"
+            placeholde="Enter Password"
+            onChange={enterUser}
+            value={userInfo.password}
+          />
+        </div>
+        <div>
+          <button type="submit" onClick={handleSubmit}>
+            Create User!
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 

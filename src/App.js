@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/projects/:id">
             <ProjectPage />
           </Route>
-          <Route exact path="/pledges/:id">
+          <Route exact path="/pledges">
           <PledgePage/>
         </Route>
           <Route exact path="/login">

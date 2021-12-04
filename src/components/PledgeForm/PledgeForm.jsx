@@ -68,7 +68,7 @@ function PledgeForm() {
           />
         </div>
         <div class="form-field">
-          <label htmlfor="pledgeComment">Pledge Comment: </label>
+          <label htmlFor="pledgeComment">Pledge Comment: </label>
           <input
             type="text"
             id="comment"
@@ -78,7 +78,7 @@ function PledgeForm() {
           />
         </div>
         <div class="form-field">
-          <label htmlfor="pledgeAnonymous">Anonymous: </label>
+          <label htmlFor="pledgeAnonymous">Anonymous: </label>
           <input
             type="checkbox"
             id="anonymous"
@@ -88,7 +88,7 @@ function PledgeForm() {
           />
         </div>
         <div class="form-field">
-          <label htmlfor="pledgeProject_id">Project id: </label>
+          <label htmlFor="pledgeProject_id">Project id: </label>
           <input
             type="text"
             id="project_id"

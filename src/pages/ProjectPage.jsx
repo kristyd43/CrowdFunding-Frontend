@@ -42,7 +42,13 @@ function ProjectPage() {
           {projectData.pledges.map((pledgeData, key) => {
             return (
               <li>
-                ${pledgeData.amount} from user: {pledgeData.supporter}
+                <p>
+                  ${pledgeData.amount} from user: {pledgeData.supporter}
+                </p>
+                <p>
+                  user {pledgeData.supporter} commented on your project! They
+                  said "{pledgeData.comment}"
+                </p>
               </li>
             );
           })}

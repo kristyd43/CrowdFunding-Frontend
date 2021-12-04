@@ -16,9 +16,7 @@ function ProjectCard(props) {
         <h3 id="project-card-title">{projectData.title}</h3>
       </Link>
       <Link to="/pledges">
-        <button type="submit" onClick={PledgeForm}>
-          Pledge Now!
-        </button>
+        <button type="submit">Pledge Now!</button>
       </Link>
     </div>
   );
